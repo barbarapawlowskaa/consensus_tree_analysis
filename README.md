@@ -28,6 +28,12 @@ The `4_consensus_rooting.py` script roots the consensus tree at the YALI (Yarrow
 ### Step 5: Visualization and Distance Calculation
 The `5_consenus_visualization.Rmd` R Markdown script visualizes both trees using a tanglegram plot and calculates the normalized Robinson-Foulds distance to quantify topological differences.
 
+## Data Source
+The analysis was performed using data from the Genolevures project, which provides protein families and synteny among complete hemiascomycetous yeast proteomes and genomes. The dataset comprises 1690 gene families from nine yeast species. For this analysis, 500 families were randomly selected.
+
+    Reference: Sherman, D. J., Martin, T., Nikolski, M., Cayla, C., Souciet, J. L., Durrens, P., & Génolevures Consortium. (2009).      Génolevures: Protein families and synteny among complete hemiascomycetous yeast proteomes and genomes. Nucleic Acids Research,      37(Database issue), D550–D554.
+
+
 ## Installation
 To successfully run the analysis scripts, the following software and libraries must be installed and accessible from your system's PATH.
 
@@ -52,5 +58,5 @@ These external command-line tools are required for alignment and tree building:
 
 ## Repository Installation
 
-    git clone https://github.com/barbarapawlowskaa/genolevures_consensus
-    cd genolevures_consensus
+    git clone https://github.com/barbarapawlowskaa/consensus_tree_analysis
+    cd consensus_tree_analysis
