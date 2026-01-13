@@ -1,50 +1,50 @@
-# Phylogenetic Tree Comparison Project: Genolevures Consensus Tree Analysis
+# Phylogenetic tree comparison: Consensus tree analysis
 
 This repository contains the scripts and results for a comparative bioinformatics analysis, focusing on reconstructing consensus phylogenetic trees from gene families of nine yeast species from the Genolevures project. The project involves multiple sequence alignment, individual tree reconstruction, consensus tree generation, and comparison with a reference topology.
 
-## Step-by-Step Analysis
+## Tree comparison pipeline
 Follow these steps in order to reproduce the consensus tree analysis:
 
-### Step 1: Gene Family Alignment and Tree Reconstruction
+### Step 1: Gene family alignment and tree reconstruction
 The `1_aligment_and_trees.sh` script processes gene families from the input directory, performs multiple sequence alignment using MAFFT, and reconstructs phylogenetic trees using IQ-TREE2. It processes files in parallel (8 jobs simultaneously).
 
     bash 1_aligment_and_trees.sh
 
-### Step 2: Tree Collection and Reference Tree Creation
+### Step 2: Tree collection and reference tree creation
 The `2_before_consensus.py` Python script collects all generated tree files, standardizes leaf labels to genome identifiers, and saves them in a single file. It also creates a reference tree based on established Genolevures phylogeny.
 
     python3 2_before_consensus.py
 
-### Step 3: Consensus Tree Generation
+### Step 3: Consensus tree generation
 The `3_iqtree_consensus.sh` script uses IQ-TREE2 to generate a consensus tree from the 500 individual trees using the bootstrap consensus method with 500 replicates.
 
     bash 3_iqtree_consensus.sh
 
-### Step 4: Tree Rooting
+### Step 4: Tree rooting
 The `4_consensus_rooting.py` script roots the consensus tree at the YALI (Yarrowia lipolytica) branch for comparison with the rooted reference tree.
 
     python3 4_consensus_rooting.py
 
-### Step 5: Visualization and Distance Calculation
+### Step 5: Visualization and distance calculation
 The `5_consenus_visualization.Rmd` R Markdown script visualizes both trees using a tanglegram plot and calculates the normalized Robinson-Foulds distance to quantify topological differences.
 
-## Data Source
+## Data source
 The analysis was performed using data from the Genolevures project, which provides protein families and synteny among complete hemiascomycetous yeast proteomes and genomes. The dataset comprises 1690 gene families from nine yeast species. For this analysis, 500 families were randomly selected.
 
-    Sherman, D. J., Martin, T., Nikolski, M., Cayla, C., Souciet, J. L., Durrens, P., & Génolevures Consortium. (2009).
-    Génolevures: Protein families and synteny among complete hemiascomycetous yeast proteomes and genomes. Nucleic Acids Research,      37(Database issue), D550–D554.
-
-
+    Sherman,  D.  J.,  Martin,  T.,  Nikolski,  M.,  Cayla,  C.,  Souciet,  J.  L.,  Durrens,  P.,  & 
+    Génolevures Consortium. (2009). Génolevures: Protein families and synteny among complete 
+    hemiascomycetous yeast proteomes and genomes. Nucleic Acids Research, 37(Database issue), D550–D554. 
+    
 ## Installation
 To successfully run the analysis scripts, the following software and libraries must be installed and accessible from your system's PATH.
 
-### Bioinformatics Software Tools
+### Bioinformatics software tools
 These external command-line tools are required for alignment and tree building:
 
 - MAFFT: Required for Multiple Sequence Alignment (MSA) (Step 1)
 - IQ-TREE2: Essential for Maximum Likelihood (ML) tree inference (Step 1, Step 3)
 
-### Programming Environments & Libraries
+### Programming environments & libraries
 
 - Python 3: Required for .py scripts
 - Dendropy: Necessary Python library for handling tree files
@@ -57,7 +57,7 @@ These external command-line tools are required for alignment and tree building:
     brew install mafft
     brew install iqtree2
 
-## Repository Installation
+## Repository installation
 
     git clone https://github.com/barbarapawlowskaa/consensus_tree_analysis
     cd consensus_tree_analysis
