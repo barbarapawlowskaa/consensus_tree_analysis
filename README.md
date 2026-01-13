@@ -31,9 +31,9 @@ The `5_consenus_visualization.Rmd` R Markdown script visualizes both trees using
 ## Data source
 The analysis was performed using data from the Genolevures project, which provides protein families and synteny among complete hemiascomycetous yeast proteomes and genomes. The dataset comprises 1690 gene families from nine yeast species. For this analysis, 500 families were randomly selected.
 
-    Sherman,  D.  J.,  Martin,  T.,  Nikolski,  M.,  Cayla,  C.,  Souciet,  J.  L.,  Durrens,  P.,  & 
-    Génolevures Consortium. (2009). Génolevures: Protein families and synteny among complete 
-    hemiascomycetous yeast proteomes and genomes. Nucleic Acids Research, 37(Database issue), D550–D554. 
+    Sherman,  D.  J.,  Martin,  T.,  Nikolski,  M.,  Cayla,  C.,  Souciet,  J.  L.,  Durrens,  P.,  & Génolevures Consortium. 
+    (2009). Génolevures: Protein families and synteny among complete hemiascomycetous yeast proteomes and genomes. 
+    Nucleic Acids Research, 37(Database issue), D550–D554. 
     
 ## Installation
 To successfully run the analysis scripts, the following software and libraries must be installed and accessible from your system's PATH.
