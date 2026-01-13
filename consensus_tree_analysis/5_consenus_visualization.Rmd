@@ -1,0 +1,44 @@
+---
+title: "lab7"
+output: html_document
+date: "2025-12-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(TreeDist)
+library(ape)
+library(phytools)
+```
+
+
+```{r}
+
+cons <- (read.tree("consensus_rooted.tree"))
+ref  <- (read.tree("reference.tree"))
+
+
+obj <- cophylo(ref, cons)
+
+plot(obj,
+     link.type = "curved",
+     link.lwd = 2,
+     link.col = "lightblue",
+     fsize = 0.9,
+     main = "Reference tree vs Consensus tree"
+)
+
+consensus_tree$tip.label
+reference_tree$tip.label
+
+
+rf_norm <- RobinsonFoulds(cons, ref, normalize = TRUE)
+cat("Normalized RF distance =", rf_norm, "\n")
+
+
+```
+
+
